@@ -5,9 +5,29 @@
 
 ## Getting DOM3D
 
-TODO: document all methods of getting DOM3D into project. (npm, cdn, etc)
+#### Bower
 
-## General Access to DOM3D
+To import DOM3D via bower use this command:
+
+```
+bower install dom3d
+```
+
+You can then include the dom3d library in your project files from `bower_components/dom3d/dist/dom3d.min.js`
+
+#### npm
+
+To import DOM3D via npm use this command:
+
+```
+npm install --save dom3d
+```
+
+#### Manual
+
+You may also manually grab the DOM3D files from the `dist` folder of this project and include them in your project that way.
+
+## General Access to DOM3D Classes
 
 After getting DOM3D into your project you'll need access to the DOM3D classes.
 

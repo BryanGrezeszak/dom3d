@@ -46,11 +46,6 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.DepthOfField = exports.StageEvent = exports.Transform3D = exports.Quaternion = exports.EulerAngle = exports.Matrix3x3 = exports.Point3D = exports.PaperElement3D = exports.Element3D = exports.Group3D = exports.Stage3D = exports.DisplayObject3D = exports.spread = undefined;
-	
 	var _DisplayObject3D = __webpack_require__(1);
 	
 	var _DisplayObject3D2 = _interopRequireDefault(_DisplayObject3D);
@@ -101,8 +96,33 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var dom3d = {
+		spread: spread,
+		DisplayObject3D: _DisplayObject3D2.default,
+		Stage3D: _Stage3D2.default,
+		Group3D: _Group3D2.default,
+		Element3D: _Element3D2.default,
+		PaperElement3D: _PaperElement3D2.default,
+		StageEvent: _StageEvent2.default,
+		DepthOfField: _DepthOfField2.default,
+		Point3D: _Point3D2.default,
+		Matrix3x3: _Matrix3x2.default,
+		EulerAngle: _EulerAngle2.default,
+		Quaternion: _Quaternion2.default,
+		Transform3D: _Transform3D2.default
+	};
+	module.exports = dom3d;
+	
+	// if is in browser environment then add dom3d to window
+	if (typeof window !== 'undefined') {
+		window.dom3d = {};
+		spread(window.dom3d, true, true);
+	}
+	
+	// spread util
 	function spread(obj) {
 		var includeGeom = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+		var includeSpread = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 	
 		if (!obj) obj = window;
 	
@@ -123,35 +143,10 @@
 			obj.Quaternion = _Quaternion2.default;
 			obj.Transform3D = _Transform3D2.default;
 		}
-	}
 	
-	// export in format that supports syntax: `var dom3d = require('dom3d');` and `import {Stage3D} from 'dom3d';`
-	exports.spread = spread;
-	exports.DisplayObject3D = _DisplayObject3D2.default;
-	exports.Stage3D = _Stage3D2.default;
-	exports.Group3D = _Group3D2.default;
-	exports.Element3D = _Element3D2.default;
-	exports.PaperElement3D = _PaperElement3D2.default;
-	exports.Point3D = _Point3D2.default;
-	exports.Matrix3x3 = _Matrix3x2.default;
-	exports.EulerAngle = _EulerAngle2.default;
-	exports.Quaternion = _Quaternion2.default;
-	exports.Transform3D = _Transform3D2.default;
-	exports.StageEvent = _StageEvent2.default;
-	exports.DepthOfField = _DepthOfField2.default;
-	
-	// export in format that supports syntax: `import dom3d from 'dom3d';`
-	
-	Object.defineProperty(exports, "default", {
-		get: function get() {
-			return exports;
+		if (includeSpread) {
+			obj.spread = spread;
 		}
-	});
-	
-	// if is in browser environment then add dom3d to window
-	if (typeof window !== 'undefined') {
-		window.dom3d = { spread: spread };
-		spread(window.dom3d, true);
 	}
 
 /***/ },
