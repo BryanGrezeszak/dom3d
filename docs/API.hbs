@@ -1,0 +1,25 @@
+# API Documentation
+
+> This documents the full public API of the DOM3D engine in a javadoc manner. If you are looking for more example based documentation [then look here](README.md).
+
+There are 3 general types of classes in the engine: display, event, and effect.
+
+Display type classes are the main classes used in the engine. They are intended to be instantiated directly (with the exception of `DisplayObject3D`, which is an abstract base class for the other display classes) or extended to create your own 3D display objects. They are as follows:
+
+- [DisplayObject3D](#DisplayObject3D) (a base class for the others)
+- [Stage3D](#Stage3D) (the stage which you will have as a root of your scene)
+- [Element3D](#Element3D) (the basic 3D element for normal usage)
+- [PaperElement3D](#PaperElement3D) (a version of Element3D with 2 different sides)
+- [Group3D](#Group3D) (a container for grouping elements in a forward kinematic fashion)
+
+Event type classes hold different types of events used within the engine.
+
+- [StageEvent](#StageEvent) (events output by the Stage3D class)
+
+Effect type classes allow you to add effects to the scene.
+
+- [DepthOfField](#DepthOfField) (a blurring depth of field effect)
+
+----------------------
+
+{{>main}}

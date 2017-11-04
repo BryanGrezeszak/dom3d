@@ -1,0 +1,25 @@
+{
+  "name": "dom3d",
+  "authors": ["Bryan Grezeszak"],
+  "description": "",
+  "main": "dist/dom3d.min.js",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+	"README.md",
+	"CHANGELOG.md",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+	"docs",
+	"private",
+    "package.json",
+	"webpack.config.js",
+	"karma.conf.js",
+	"documenting.js"
+  ],
+  "dependencies": {
+  }
+}
